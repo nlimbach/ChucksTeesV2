@@ -1,0 +1,28 @@
+.colorBox {
+    /*align-items: center;*/
+    /*align-content: center;*/
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+
+.colorBox:hover{
+
+    width: 37px;
+    height: 37px;
+}
+
+.colorImage, .placeholderColorImage{
+    width: 270px;
+    height: 320px;
+    margin: 45px;
+}
+
+#placeOrderContainer{
+    left:25%;
+    right: 25%;
+}
