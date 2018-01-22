@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Navpills from "./components/Shared/Nav/Navpills";
-import Home from "./pages/Home";
-import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
-import PlaceOrderPage from "./pages/PlaceOrderPage";
-import ProfilePage from './pages/ProfilePage';
+import Home from "./UserPagesages/Home";
+import LoginPage from "./UserPagesages/LoginPage";
+import SignUpPage from "./UserPagespages/SignUpPage";
+import PlaceOrderPage from "./UserPagespages/PlaceOrderPage";
+import ProfilePage from './UserPagespages/ProfilePage';
 import config from '../app.config';
 
 import { Route } from 'react-router-dom';
