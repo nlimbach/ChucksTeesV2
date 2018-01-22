@@ -1,42 +1,29 @@
 import React, { Component } from "react";
-import Navpills from "./Navpills";
+import Navpills from "./components/Shared/Nav/Navpills";
 import Home from "./pages/Home";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import Placeorder from "./pages/placeorder";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
+import PlaceOrderPage from "./pages/PlaceOrderPage";
+import ProfilePage from './pages/ProfilePage';
+import config from '../app.config';
 
-class Portfolio extends Component {
-  state = {
-    currentPage: "Home"
-  };
+import { Route } from 'react-router-dom';
+import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
 
-  handlePageChange = page => {
-    this.setState({ currentPage: page });
-  };
-
-  renderPage = () => {
-    if (this.state.currentPage === "Home") {
-      return <Home />;
-    } else if (this.state.currentPage === "login") {
-      return <Login />;
-    } else if (this.state.currentPage === "signup") {
-      return <Signup />;
-    } else if (this.state.currentPage === "placeorder"){
-      return <Placeorder />;
+export default class PortfolioContainer extends Component {
+    render() {
+        return (
+            <div className="PortfolioContainer">
+              <Navpills />
+              <main>
+                <Route path="/" exact component={Home} />
+                <Route path="/login" render={() => <LoginPage baseUrl={config.url} />} />
+                <Route path="/implicit/callback" component={ImplicitCallback} />
+                <Route path="/signup" component={SignUpPage} />
+                <Route path="/placeorder" component={PlaceOrderPage}/>
+                <SecureRoute path="/profile" component={ProfilePage} />
+              </main>
+            </div>
+        );
     }
-  };
-
-  render() {
-    return (
-      <div>
-        <Navpills
-          currentPage={this.state.currentPage}
-          handlePageChange={this.handlePageChange}
-        />
-        {this.renderPage()}
-      </div>
-    );
-  }
 }
-
-export default Portfolio;

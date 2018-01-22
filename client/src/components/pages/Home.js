@@ -1,8 +1,13 @@
-import React from "react";
+import React, { Component } from 'react';
 import Aboutcard from "../components/AboutCard/AboutCard";
-const Home = () =>
-    <div className ="center">
-        <Aboutcard />
-    </div>;
 
-export default Home;
+export default class Home extends React.Component {
+    render() {
+        return (
+            <div className="center">
+                <Aboutcard/>
+            </div>
+        );
+    }
+}
+
