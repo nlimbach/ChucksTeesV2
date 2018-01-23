@@ -1,9 +1,11 @@
-var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const express = require('express');
+const OktaJwtVerifier = require('@okta/jwt-verifier');
+var cors = require('cors');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -39,6 +41,39 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// const oktaJwtVerifier = new OktaJwtVerifier({
+//     issuer: 'https://dev-138556.oktapreview.com.com/oauth2/default',
+//     assertClaims: {
+//         aud: 'api://default',
+//     },
+// });
+//
+// function authenticationRequired(req, res, next) {
+//     const authHeader = req.headers.authorization || '';
+//     const match = authHeader.match(/Bearer (.+)/);
+//
+//     if (!match) {
+//         return res.status(401).end();
+//     }
+//
+//     const accessToken = match[1];
+//
+//     return oktaJwtVerifier.verifyAccessToken(accessToken)
+//         .then((jwt) => {
+//             req.jwt = jwt;
+//             next();
+//         })
+//         .catch((err) => {
+//             res.status(401).send(err.message);
+//         });
+// }
+//
+// app.use(cors());
+//
+// app.get('/secure', authenticationRequired, (req, res) => {
+//     res.json(req.jwt);
+// });
 
 app.use('/api', index);
 app.use('/api/users', users);
