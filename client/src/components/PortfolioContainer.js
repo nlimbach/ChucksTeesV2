@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Navpills from "./components/Shared/Nav/Navpills";
-import Home from "./UserPagesages/Home";
-import LoginPage from "./UserPagesages/LoginPage";
-import SignUpPage from "./UserPagespages/SignUpPage";
-import PlaceOrderPage from "./UserPagespages/PlaceOrderPage";
-import ProfilePage from './UserPagespages/ProfilePage';
+import Home from "./UserPages/Home";
+import LoginPage from "./UserPages/LoginPage";
+import SignUpPage from "./UserPages/SignUpPage";
+import PlaceOrderPage from "./UserPages/PlaceOrderPage";
+import ProfilePage from './UserPages/ProfilePage';
 import config from '../app.config';
-
+import Navpills from './components/Shared/Nav/Navpills';
 import { Route } from 'react-router-dom';
 import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
 
