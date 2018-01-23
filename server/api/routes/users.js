@@ -12,8 +12,9 @@ router.post('/', (req, res, next) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             number: req.body.number,
+            username: req.body.username,
             email: req.body.email,
-            username: req.body.username
+            login: req.body.email
         },
         credentials: {
             password: {
@@ -21,6 +22,7 @@ router.post('/', (req, res, next) => {
             }
         }
     };
+
     oktaClient.createUser(newUser)
         .then(user => {
             res.status(201);
