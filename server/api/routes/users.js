@@ -6,13 +6,19 @@ const oktaClient = require('../lib/oktaClient');
 
 
 router.post('/', (req, res, next) => {
+    // NOTE:
+    // Not fully knowledgable with OktaClient
+    // It's not returning a 401 Not authorized errors
+    // Check your credentials
+    // Seems like they don't like the property of number and username
+    // Look up how to add extra properties to them.
     if (!req.body) return res.sendStatus(400);
     const newUser = {
         profile: {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
-            number: req.body.number,
-            username: req.body.username,
+            // number: req.body.number,
+            // username: req.body.username,
             email: req.body.email,
             login: req.body.email
         },
