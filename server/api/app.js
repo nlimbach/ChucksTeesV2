@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 const express = require('express');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 var cors = require('cors');
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 
