@@ -6,12 +6,8 @@ var bodyParser = require('body-parser');
 const express = require('express');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 var cors = require('cors');
-<<<<<<< HEAD
-=======
-
 
 var port = process.env.PORT || 8000;
->>>>>>> c01072d049fa55a494fd331ab8751f0a03ebdc82
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -29,44 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// NOTE:
-// These below that I remove were throwing an errors. 
-
-
-// const oktaJwtVerifier = new OktaJwtVerifier({
-//     issuer: 'https://dev-138556.oktapreview.com.com/oauth2/default',
-//     assertClaims: {
-//         aud: 'api://default',
-//     },
-// });
-//
-// function authenticationRequired(req, res, next) {
-//     const authHeader = req.headers.authorization || '';
-//     const match = authHeader.match(/Bearer (.+)/);
-//
-//     if (!match) {
-//         return res.status(401).end();
-//     }
-//
-//     const accessToken = match[1];
-//
-//     return oktaJwtVerifier.verifyAccessToken(accessToken)
-//         .then((jwt) => {
-//             req.jwt = jwt;
-//             next();
-//         })
-//         .catch((err) => {
-//             res.status(401).send(err.message);
-//         });
-// }
-//
-// app.use(cors());
-//
-// app.get('/secure', authenticationRequired, (req, res) => {
-//     res.json(req.jwt);
-// });
-
 app.use('/api', index);
 app.use('/api/users', users);
 
@@ -74,8 +32,9 @@ app.use('/api/users', users);
 // NOTE:
 // Seems like you guys were using the express generator
 // Which by default comes with Jade install for you
-// and other configurations that you don't need
-// So I remove them. 
+// and other configurations that you dont need
+// So I remove them.
+
 app.listen(port, () => {
   console.log(`Server is starting at port ${port}`);
 });
