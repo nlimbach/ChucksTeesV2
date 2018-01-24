@@ -5,23 +5,6 @@ a#navLogo{
     padding-left:25%;
 }
 
-.nav-center{
-    background-color: black;
-}
-
-.nav-center ul{
-}
-
-.nav-center ul li {
-    display: inline;
-    float: none;
-}
-
-.nav-center ul li a {
-    display: inline-block;
-    font-size:18px;
-}
-
 .navLinks{
     color: lightgray;
 }
@@ -29,5 +12,21 @@ a#navLogo{
 .navLinks:hover{
     color: white;
     background-color: transparent;
+}
+
+nav{
+    background-color: black;
+    opacity: 1;
+}
+
+
+nav ul li a {
+    display: inline-block;
+    font-size:18px;
+}
+
+.brandLogo{
+    margin-top: 14px;
+    margin-left: 5px;
 }
 

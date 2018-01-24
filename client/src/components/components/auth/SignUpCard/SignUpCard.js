@@ -103,7 +103,7 @@ export default withAuth(class SignUpCard extends React.Component {
                                placeholder="Password" value={this.state.password} onChange={this.handleChange} required/>
                     </div>
 
-                    <input type="submit" id="submit" value="Signup"/>
+                    <input type="submit" className="btn waves-effect waves-light red signUpButton" id="submit" value="Signup"/>
                 </form>
             </div>
         );

@@ -18,6 +18,6 @@
     border-bottom: 1px solid red !important;
 }
 
-#loginSubmit{
+.loginButton{
     margin-bottom:10px;
 }

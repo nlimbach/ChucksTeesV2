@@ -26,7 +26,7 @@ export default withAuth(class Navpills extends React.Component {
         const authNav = this.state.authenticated ?
             <ul className="auth-nav">
                 <li><a href="javascript:void(0)" onClick={this.props.auth.logout}>Logout</a></li>
-                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/logout">Logout</Link></li>
             </ul> :
             <ul className="auth-nav">
                 <li><a href="javascript:void(0)" onClick={this.props.auth.login}>Login</a></li>
@@ -35,8 +35,9 @@ export default withAuth(class Navpills extends React.Component {
         return (
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li className="btn red brandLogo"><Link to="/">Chucks Tees</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/placeorder">Shop</Link></li>
                     {authNav}
                 </ul>
             </nav>

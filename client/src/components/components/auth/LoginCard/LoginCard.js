@@ -55,7 +55,7 @@ export default withAuth(class LoginCard extends React.Component {
 
     return(
         <div className="card center-align z-depth-4" style={{margin: '25px'}} id="loginCard">
-            <h4 className="center-align black-text card-title">Sign Up</h4>
+            <h4 className="center-align black-text card-title">Login</h4>
                 <form onSubmit={this.handleSubmit}>
                     {errorMessage}
                     <div className="form-group" id="userName">
@@ -68,7 +68,7 @@ export default withAuth(class LoginCard extends React.Component {
                             placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} required/>
                     </div>
 
-                    <input type="submit" id="submit" value="Login"/>
+                    <input type="submit" className="btn waves-effect waves-light red loginButton" id="submit" value="Login"/>
                 </form>
         </div>
 
