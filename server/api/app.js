@@ -7,6 +7,8 @@ const express = require('express');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 var cors = require('cors');
 
+
+var port = process.env.PORT || 8000;
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,23 +26,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// NOTE:
+// These below that I remove were throwing an errors. 
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
 
 // const oktaJwtVerifier = new OktaJwtVerifier({
 //     issuer: 'https://dev-138556.oktapreview.com.com/oauth2/default',
@@ -78,4 +67,12 @@ app.use(function(err, req, res, next) {
 app.use('/api', index);
 app.use('/api/users', users);
 
-module.exports = app;
+
+// NOTE:
+// Seems like you guys were using the express generator
+// Which by default comes with Jade install for you
+// and other configurations that you don't need
+// So I remove them. 
+app.listen(port, () => {
+  console.log(`Server is starting at port ${port}`);
+});
